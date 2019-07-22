@@ -1,0 +1,27 @@
+import sys
+
+lines =  ['1550', '56 17', '120 3', '62 16', '8 11', '117 9', '130 0', '105 20', '136 17', '111 5', '66 15', '134 7', '54 9', '21 17', '149 18', '112 13', '4 7', '85 5', '89 14', '1 14', '73 12', '83 9', '80 20', '141 15', '57 14', '70 19', '126 5', '44 0', '55 0', '86 18', '130 1', '84 5', '49 6', '151 16', '141 18', '106 5', '109 9', '26 20', '24 1', '19 13', '134 18', '131 0', '139 1']
+lines1 = []
+
+depassé = []
+devancé = []
+for i in lines[1:]:
+    i = i.split()
+
+    depassé.append(int(i[1]))
+    devancé.append(int(i[0]))
+
+
+depassé = sum(depassé)
+position = int(lines[0]) - depassé
+
+
+devancé = sum(devancé)
+position = position + devancé
+
+if position > 10000:
+    print("KO")
+elif position <= 100:
+    print(1000)
+elif position > 101 and position <= 10000:
+    print(100)
